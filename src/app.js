@@ -1,15 +1,20 @@
-class Person {
-   constructor(name, surname){
-      this.name =name;
-      this.surname = surname;
-   }
+import {RepoTest} from "./data.js";
+import {RandomTest} from "./random.js";
+import {ArrayTest} from "./array.js";
+import {PersonTest} from "./person.js";
+import {SetTest} from "./set.js";
+import {MapTest} from "./map.js";
+import {PromiseTest} from "./promise.js";
+
+var tests = [];
+//tests.push(new PersonTest());
+//tests.push(new RepoTest());
+//tests.push(new RandomTest());
+//tests.push(new ArrayTest());
+//tests.push(new SetTest());
+//tests.push(new MapTest());
+tests.push(new PromiseTest());
+
+for(var test of tests){
+   test.run();
 }
-
-let p = new Person("Marko", "Danijel");
-let log = (p) => { console.log("2", p.name, p.surname); }
-let formatter = (p) => "1 " + p.surname + " " + p.name;
-let logger = (p, f) => console.log(f(p));
-
-logger(p, formatter);
-log(p);
-console.log("3", p.name, p.surname);
